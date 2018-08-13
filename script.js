@@ -1,5 +1,5 @@
 // Really Long Version variables
-// var nameField = document.getElementById('name')
+var nameField = document.getElementById('name')
 // var carYear = document.getElementById('car-year')
 // var carMake = document.getElementById('car-make')
 // var carModel = document.getElementById('car-model')
@@ -28,6 +28,13 @@ function carComplete (x) {
     x.parentElement.parentElement.classList.remove('input-invalid')
 }
 
+function addMessage (x) {
+    var messageDiv = document.createElement('div')
+    messageDiv.classList.add('message')
+    messageDiv.innerText = 'cannot be blank'
+    nameField.parentElement.appendChild(messageDiv)
+
+}
 
 // for (content of inputField) {
 //     clearErr(content)
@@ -94,6 +101,7 @@ document.getElementById("parking-form").addEventListener("submit", function(e){
     for (content of fields) {
         if (content.value.trim() === "") {
         showError(content)
+        addMessage(content)
             } else {
         missionComplete(content)
             }
@@ -103,13 +111,13 @@ document.getElementById("parking-form").addEventListener("submit", function(e){
         if (content.value.trim() === "") {
         carError(content)
         } 
-    for (content of carFields) {
+
         if (carFields[0].value.trim() !== "" && 
             carFields[1].value.trim() !== "" &&
             carFields[2].value.trim() !== "") {
                 carComplete(content)
             }
-    }
+        
     
 })
     
