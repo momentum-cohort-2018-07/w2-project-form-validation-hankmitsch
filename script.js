@@ -32,9 +32,10 @@ function addMessage (x) {
     var messageDiv = document.createElement('div')
     messageDiv.classList.add('message')
     messageDiv.innerText = 'cannot be blank'
-    nameField.parentElement.appendChild(messageDiv)
-
+    messageDiv.style = "color: red; font-size: 80%;"
+    x.parentElement.appendChild(messageDiv)
 }
+
 
 // for (content of inputField) {
 //     clearErr(content)
